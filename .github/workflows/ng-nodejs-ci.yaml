@@ -55,6 +55,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
           cd drizzle-orm/drizzle-orm
-          pnpm publish \
+          npm publish \
             --provenance \
-            --access public --no-git-checks
+            --access public \
+            adviser-drizzle-orm-*.tgz
