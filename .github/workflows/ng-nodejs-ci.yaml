@@ -35,12 +35,12 @@ jobs:
 
       - name: Patch Version ${{ env.GITHUB_REF }}
         run: |
-          cd drizzle-orm/drizzle-orm ; node ../.github/workflows/patch-package.json.js "$GITHUB_REF"
+          cd drizzle-orm/drizzle-orm
+          node ../../.github/workflows/patch-package.json.js "$GITHUB_REF"
           git diff
 
       - name: Build Version ${{ env.GITHUB_REF }}
         run: |
-          git clone -b simple-iterator https://github.com/mabels/drizzle-orm drizzle-orm
           cd drizzle-orm/drizzle-orm
           pnpm install
           pnpm run build
