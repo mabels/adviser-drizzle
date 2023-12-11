@@ -5,4 +5,5 @@ console.error(`Patch package.json version to ${version}`);
 const packageJson = JSON.parse(fs.readFileSync("package.json").toString());
 packageJson.version = version;
 packageJson.name = `@adviser/${packageJson.name}`;
+packageJson.repository.url = "git+https://github.com/mabels/adviser-drizzle.git";
 fs.writeFileSync("package.json", JSON.stringify(packageJson, undefined, 2) + "\n");
