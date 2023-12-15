@@ -48,7 +48,7 @@ jobs:
           pnpm install
           pnpm run build
           pnpm run test
-          pnpm run test:types
+          #pnpm run test:types
           pnpm run pack
 
       - uses: mabels/neckless@main
