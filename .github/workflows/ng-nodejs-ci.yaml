@@ -34,7 +34,7 @@ jobs:
 
       - name: Clone Drizzle Fork ${{ env.GITHUB_REF }}
         run: |
-          git clone -b "$(echo $GITHUB_REF | sed 's/^v//')" https://github.com/mabels/drizzle-orm.git drizzle-orm
+          git clone -b "$(echo $GITHUB_REF | sed 's|^refs/tags/v||')" https://github.com/mabels/drizzle-orm.git drizzle-orm
 
       - name: Patch Version ${{ env.GITHUB_REF }}
         run: |
